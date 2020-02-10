@@ -1,0 +1,104 @@
+* {
+  @include box-shadow(none);
+  @include text-shadow(none);
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+@page {
+  size: A4;
+  margin-top: 0mm;  /* this affects the margin in the printer settings */
+  margin-bottom: 0mm;  /* this affects the margin in the printer settings */
+  margin-left: 10mm;  /* this affects the margin in the printer settings */
+  margin-right: 10mm;  /* this affects the margin in the printer settings */
+}
+body {
+font-family: 'Taviraj', serif;
+font-size: 14pt;
+
+}
+footer {page-break-after: always;}
+h1 {
+font-weight: 600;
+text-align: center;
+font-size: 22pt;
+}
+h3 {
+font-weight:600;
+font-size:12pt;
+font-style: italic;
+padding-top:6mm;
+padding-bottom:0;
+margin:0;
+}
+p {
+text-indent: 8mm;
+}
+hr {
+border: 1px dashed #ccc;
+}
+.printContainerA4 {
+color: #000;    
+background-color: #fff;
+display:block;
+width: 210mm;
+height: 290mm;
+margin-left: 3mm;
+margin-right: 3mm;
+margin-top: 6mm;
+margin-bottom: 6mm;
+
+padding-top: 8mm;
+padding-bottom: 2mm;
+padding-left: 4mm;
+padding-right: 4mm;
+}
+@media screen {
+  .printContainerA4 {
+  border: 1px lightgray dotted;
+  }
+  body {
+  padding: 10%;
+  }
+  html {
+  background-color: gray;
+  }
+}
+#header {
+display:flex;
+width: 100%;
+font-size: 14pt;
+}
+#leftHeader {
+width: 75%
+}
+#rightHeader {
+width: 25%;
+}
+.logo {
+  float:left;
+  width: 100px;
+  height: auto;
+}
+.signBox {
+display: inline-block;
+padding-right: 3mm;
+padding-top: 3mm;
+padding-bottom: 3mm;
+}
+
+#officeUse {
+  font-size:12pt;
+  display:flex;
+}
+.c1,.c2,.c3 {
+  flex: 1 1 auto;
+}
+.officeItem {
+  border: 1px solid black;
+  padding: 5px;
+  margin:-1px 0 0 -1px;
+}
+.page-break	
+{
+  page-break-after: always; 
+}

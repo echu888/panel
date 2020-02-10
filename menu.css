@@ -1,0 +1,139 @@
+#menuBar {
+  display: -webkit-flex;
+  display: flex;
+  align-items: stretch; 
+  justify-content: space-between; 
+  background: #E95C18;
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+  height: 50px;
+  top:0;
+  width: 100%;
+}
+#menuBarSpacer {
+}
+
+#leftMenu {
+  -webkit-flex:7;
+  flex:7;
+  font-size: 0.9em;
+  white-space:nowrap;
+}
+#rightMenu {
+  height:50px;
+  line-height:25px;
+}
+
+.dropdown-button {
+    font-size: 1.3em;
+    background: #E95C18;
+    color: white;
+    padding: 14px 0.7vw ;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-item {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #c1c1c1
+}
+.dropdown-item:hover .dropdown-content {
+    display: block;
+}
+.dropdown-item:hover .dropdown-button {
+    background: #c93C08;
+}
+
+
+#authorizedLogin { 
+  text-align: right;
+  font-size: 1em;
+}
+#authorizedLoginName { }
+#authorizedLoginEmail { }
+#authorizedLoginImage {
+  border-radius: 50%;
+  max-width: 46px;
+  max-height: 46px;
+  padding: 2px;
+}
+.languageSelector {
+  cursor: pointer;
+}
+#lineTwo {
+  width: 120px;
+}
+#signOut {
+  display:inline-block;
+}
+#signOut a {
+  text-decoration:none;
+  color: #000;
+}
+
+
+.rightside-item {
+    position: relative;
+    display: inline-block;
+}
+.rightside-content {
+    display: none;
+    right: 10%;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 16px 8px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    padding: 12px;
+}
+
+.rightside-item:hover .rightside-content {
+    display: block;
+}
+
+.buttonlink {
+    color: #666;
+    cursor: pointer;
+    text-decoration: none;
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 12px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#ajax-panel {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    max-height: 90px;
+    background: rgba( 30, 30, 30, 0.5 );
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#ajax-panel.closed {
+    max-height: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+

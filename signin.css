@@ -1,0 +1,41 @@
+body 
+{
+  background: url('images/blue.jpg');
+  background-size: cover; 
+  display:flex; /* for centering purposes */
+  align-items: center;
+  justify-content: center;
+}
+  
+
+.infoBox 
+{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.8em;
+  border: 2px solid black; 
+  background: white;
+  width: 320px;
+  min-height: 520px;
+  /*width: 35%; */
+  text-align: center;
+  /*padding: 20 20 20 20; */
+  border-radius: 30px;
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  border-collapse: collapse;
+}
+
+.g-signin2 
+{
+  display: inline-block;
+}
+
+#signInButton {
+  display: inline-block;
+}
+
+#result 
+{
+  /*padding: 22px;*/
+  padding: 30px 4px;
+  font-size: 1.0em;
+}

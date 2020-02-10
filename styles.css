@@ -1,0 +1,151 @@
+* {
+}
+body {
+  margin: 0px;
+  background: #34495e;
+}
+
+html {
+  font-family: 'Kanit', 'Noto Sans', sans-serif;
+
+  font-size: 12px;
+  @media (min-width: 640px) {
+    font-size: 14px;
+  }
+  @media (min-width: 800px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 18px;
+  }
+}
+
+main {
+}
+
+.pageTitle {
+color: white;
+}
+h1 { 
+font-size: 3.0em; } // 50 ÷ 16 = 3.125
+h2 { 
+font-size: 2.5em; } // 37 ÷ 16 = 2.3125
+h3 { 
+font-size: 1.2em; } // 28 ÷ 16 = 1.75
+
+
+input {
+  color: #000;
+  background-color: #fff;
+}
+.modal button {
+  font-size: 1.2em;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  margin: 2px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+
+@media only screen and (min-device-width: 320px){
+  .icon {
+     flex: 0 0 auto;
+     margin-left:  2px;
+     margin-right: 2px;
+     width:   14px;
+     height:  14px;
+     cursor:pointer;
+  }
+}
+
+@media only screen and (min-device-width: 640px){
+  .icon {
+     display: inline-block;
+     flex: 0 0 auto;
+     margin-left:  4px;
+     margin-right: 4px;
+     width:   18px;
+     height:  18px;
+     cursor:pointer;
+  }
+}
+div.noteEntry {
+   background-image:url(images/note.png) ;
+   background-size: 100% 100%;
+}
+div.queueEntry {
+   background-image:url(images/queue.png) ;
+   background-size: 100% 100%;
+}
+
+div.dimmed {
+   opacity: 0.4;
+}
+
+
+div.gphotos {
+   background-image:url(images/gphotos.png) ;
+   background-size: 100% 100%;
+}
+
+div.donateEntry {
+   background-image:url(images/donate.png) ;
+   background-size: 100% 100%;
+}
+
+div.finishEntry {
+   background-image:url(images/finish.png) ;
+   background-size: 100% 100%;
+}
+
+div.printEntry {
+   background-image:url(images/print.png) ;
+   background-size: 100% 100%;
+}
+
+
+div.editEntry {
+   background-image:url(images/pen.png);
+   background-size: 100% 100%;
+}
+
+div.trashEntry {
+   background-image:url(images/trash.png);
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+
+.formLine {
+  line-height: 2.4em;
+  font-size: 1.1em;
+  background: #ddd;
+  padding: 2px 10px;
+}
+
+.selectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  order-radius: 4px;
+}
+.selectItem {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 4px 8px;
+  background: #ccc;
+  cursor: pointer;
+}
+.selectedItem {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* workaround for using Rome with modal */
+.rd-container {
+  z-index: 2
+}

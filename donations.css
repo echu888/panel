@@ -1,0 +1,136 @@
+#rootElement {
+  width: 100%; 
+  color: black;
+  background: white;
+}
+#teacherListContainer {
+}
+
+.teacherNameHeader {
+  padding: 0.8em;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+.levelOneContainer {
+  border-bottom: 10px black solid ;
+  padding-bottom: 30px;
+/*
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background: white;
+  /*border: 0.5em black solid;
+  margin: 2em 0em;
+  background: gray;
+  border-radius: 1em; */
+}
+.levelTwoContainer {
+  /*background: lightgray;*/
+  margin-top: 8px;
+  border-top: 16px gray solid;
+}
+
+.classDetails {
+  padding-top: 16px;
+  font-size: 1.6em;
+  justify-content: space-around;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .classDetails {
+    padding-top: 8px;
+    padding-right: 16px;
+    font-size: 1.2em;
+    text-align: right;
+    flex-direction:column;
+  }
+
+}
+
+
+.flexContainer {
+  display: flex;
+}
+.flexItem {
+  flex: 1;
+}
+.hidden {
+  display: none;
+}
+.iditableCell {
+  border: 1px gray ridge;
+  text-align: center;
+  width: 100px;
+}
+.iditableCell:hover {
+  cursor: text;
+  transition: all .4s linear;
+  background: #aaa;
+  border: 1px white ridge;
+}
+
+
+.donationsTable {
+  padding: 1em 1em;
+  width: 100%;
+}
+table tr {
+}
+table th { 
+  font-size: 1.1em;
+  font-weight: 900;
+  border-bottom: 1px black solid;
+}
+table td {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table th {
+    display:none;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

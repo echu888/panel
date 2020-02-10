@@ -1,0 +1,127 @@
+* {
+  @include box-shadow(none);
+  @include text-shadow(none);
+  box-sizing: border-box;
+}
+@page {
+  size: A4 landscape;
+  margin-top: 0mm;  /* this affects the margin in the printer settings */
+  margin-bottom: 0mm;  /* this affects the margin in the printer settings */
+  margin-left: 10mm;  /* this affects the margin in the printer settings */
+  margin-right: 10mm;  /* this affects the margin in the printer settings */
+}
+body {
+font-family: 'Lato', sans-serif;
+font-size: 12pt;
+
+}
+footer {page-break-after: always;}
+h1 {
+font-weight: 600;
+text-align: center;
+font-size: 16pt;
+}
+h3 {
+font-weight:500;
+font-size:11.5pt;
+font-style: italic;
+}
+table  {
+table-layout: fixed;
+font-size: 9pt;
+border-collapse: collapse;
+text-align:center;
+}
+th {
+font-size: 10pt;
+height: 55px;
+border-left: 1px dashed #ccc;
+border-right: 1px dashed #ccc;
+border-top: 1px dashed #ccc;
+border-bottom: 2px solid black;
+border-collapse: collapse;
+}
+td {
+border: 1px dashed #ccc;
+padding: 2px;
+border-collapse: collapse;
+height: 35px;
+}
+th.numberCol    { width: 30px;    }
+th.nameCol      { width: 120px;    }
+th.birthdateCol { width: 90px;     }
+th.testedCol    { width: 40px;     }
+th.lastLevelCol { width: 90px;     }
+td.noborder     { border: 0px;     }
+tfoot > tr > td { height: 300px;   }
+th.day          { width: 32px; 
+                  max-width: 32px;
+                  font-size: 6.5pt;  
+                  vertical-align:top; 
+                  text-align:right;
+                }
+.detailsLabel {
+text-decoration: underline;
+}
+
+.printContainerA4 {
+color: #000;    
+background-color: #fff;
+display:block;
+height: 210mm;
+width: 290mm;
+margin-left: 3mm;
+margin-right: 3mm;
+margin-top: 6mm;
+margin-bottom: 6mm;
+
+padding-top: 8mm;
+padding-bottom: 2mm;
+padding-left: 4mm;
+padding-right: 4mm;
+}
+@media screen {
+  .printContainerA4 {
+  border: 1px lightgray dotted;
+  }
+  body {
+  padding: 0;
+  }
+  html {
+  background-color: gray;
+  }
+}
+
+.verticalText {
+  transform:rotate(90deg);
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+#header {
+display:flex;
+width: 100%;
+font-size: 14pt;
+}
+#leftHeader {
+width: 75%
+}
+#rightHeader {
+width: 25%;
+}
+.logo {
+  float:left;
+  width: 100px;
+  height: auto;
+}
+.page-break	
+{
+  page-break-after: always; 
+}

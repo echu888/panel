@@ -1,0 +1,363 @@
+.mainViewport {
+display:flex;
+}
+.leftPlaceholder {
+flex: 1 1 14%;
+position: relative;
+margin-right: 2px;
+}
+#ungroupedPeopleContainer {
+position:relative;
+}
+
+#groupedPeopleContainer {
+flex: 4 1 76%;
+align-self: stretch;
+text-align: center;
+}
+.options {
+width: 90px;
+float:right;
+padding: 6px;
+}
+
+#newGroup
+{
+  line-height: 25px;
+}
+
+.circle
+{
+  cursor: hand;
+  background-color:#db4531;
+  background-image: url('images/mini_plus.png');
+  width:60px;
+  height:60px;
+  box-shadow: 3px 3px 6px #333333; 
+  border-radius:50%;
+  position: absolute;
+  right: 40px;
+  margin-right:-30px;
+  top: 75px;
+/*  -webkit-transition:all 0.2s linear;
+  -moz-transition:all 0.2s linear;
+  -ms-transition:all 0.2s linear;*/
+  transition:all 0.2s linear;
+}
+
+.roundedContainer {
+  background-color: #eee;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.dayspicker {
+  margin-top: 6px;
+  font-color: black;
+}
+
+
+.dragula-container {
+  min-height: 12em;
+  background: rgba( 0,0,50,0.3 );
+  padding: 2px;
+}
+.student {
+  text-align: center;
+}
+.displayName {
+  display:inline;
+}
+.donationStatus {
+  height: 10px;
+  float: left;
+} 
+.draggable {
+  color: #ffffff;
+  text-align: center;
+  margin: 3px;
+  background: linear-gradient(#ee9934, #fe5500); /* Standard syntax */
+  padding: 1px;
+  box-shadow: 1px 1px 1px rgba( 0,0,0, 0.3 );
+  border-radius: 3px;
+}
+
+.dragula-container > div {
+  transition: all .5s ease;
+
+}
+
+#ungrouped-people > div:active {
+  opacity: .6;
+  border: 2px solid #000;
+}
+
+#ungrouped-people > div:hover {
+  border: 1px solid gray;
+  background-color: #e5e5e5;
+}
+
+
+@media only screen and (min-device-width: 320px){
+    .groupShell {
+      background: linear-gradient(#778899, #aabbcc); /* Standard syntax */
+      color: white;
+      border-radius: 3px;
+      box-shadow: 2px 2px 2px #333;
+    
+      width: 90%;
+    
+      text-align: center;
+      vertical-align:top;
+    }
+
+}
+
+
+@media only screen and (min-device-width: 640px){
+    .groupShell {
+      background: linear-gradient(#778899, #aabbcc); /* Standard syntax */
+      color: white;
+      border-radius: 5px;
+      box-shadow: 3px 3px 1px #333;
+    
+      width: 90%;
+    
+      text-align: center;
+      vertical-align:top;
+    }
+ 
+}
+
+
+details[open] SUMMARY ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+
+.groupDetails {
+}
+.groupToolbar {
+display:flex;
+justify-content: center;
+align-content: space-around;
+flex-wrap: wrap;
+}
+.groupTeacher {
+  font-size: 1.5em;
+  overflow:hidden;
+  width: 100%;
+}
+.selectedDays, .StudyTime {
+  display: inline-block;
+  padding: 0px 8px 0px 8px;
+  background: #555555;
+  border-radius: 6px;
+}
+
+.StartDate {
+}
+.TotalHours {
+}
+.day {
+}
+#continuingStudentsAll {
+  cursor: pointer;
+  color: white;
+  background: #5555aa;
+  margin: 4px;
+  padding: 2px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 1px gray ;
+}
+#continuingStudentsNone {
+  cursor: pointer;
+  color: white;
+  background: #5555aa;
+  margin: 4px;
+  padding: 2px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 1px gray ;
+}
+
+.popupBubble {
+  background: #ffffa5;
+  padding: 4px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 1px gray ;
+}
+div#personInfo {
+   margin: 0px 8px 8px 8px;
+   border: 1px black solid;
+   padding: 4px;
+   background-color: #777;
+   color: white;
+   resize:vertical;
+   overflow:auto;  
+   min-height:9em; 
+   display: flex;
+   flex-direction: column;
+}
+
+#personInfoTitle {
+  text-align: center;
+  font-size: 2em;
+  flex: 1 1 auto;
+}
+#personInfoContent {
+  flex: 3 1 auto;
+}
+.personInfoRow {
+   flex: 1;
+   display: flex;
+   justify-content: flex-start;
+   width: 100%;
+   
+}
+.personInfoTimestamp {
+   background: #333;
+   margin-left: 8px;
+   margin-right: 8px;
+   flex: 0 1 auto;
+   width: 30%;
+   padding: 2px 4px;
+   border-bottom: 1px dotted white;
+}
+.personInfoNote {
+   background: #444;
+   flex: 0 0 auto;
+   width: 70%;
+   padding: 2px 10px;
+   border-bottom: 1px dotted white;
+}
+.personInfoNote a {
+   color: white;
+}
+.profilePic {
+  height: 120px;
+  width: 120px;
+  border-radius: 8px;
+}
+
+
+
+
+
+#newGroupsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+.newGroupsElement {
+  flex: 0 0 30%;
+}
+
+.hourColumns {
+  display: flex;
+  width: 100%;
+  font-size: 2vw;
+}
+
+.hourColumn {
+  flex: 0 0 8.3%;
+  box-shadow: 0 0 0 1px black inset;
+}
+
+#teachersHoursColumns { 
+}
+
+.gridRow { 
+  display: flex;
+}
+.grid {
+  flex: 0 0 8.3%;
+  box-shadow: 0 0 0 1px #bbb inset;
+}
+ .grid_60 {
+  flex: 0 0 16.6%;
+  box-shadow: 0 0 0 1px black inset;
+  overflow: hidden;
+}
+.grid_90 {
+  flex: 0 0 24.9%;
+  box-shadow: 0 0 0 1px black inset;
+  overflow: hidden;
+}
+.grid_120 {
+  flex: 0 0 33.2%;
+  box-shadow: 0 0 0 1px black inset;
+  overflow: hidden;
+}
+
+
+.footerSpacer {
+  height: 100px;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+

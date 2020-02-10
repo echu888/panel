@@ -1,0 +1,20 @@
+body {
+background: #ccc; 
+}
+table { 
+font-size: 1em;
+background: #fefefe; 
+border: 2px black solid;
+margin-bottom: 48px;
+box-shadow: 10px 10px 8px #888;
+}
+th {
+border-left: 1px gray dotted;
+border-bottom: 1px black solid;
+padding: 10px 8px;
+}
+td {
+border-left: 1px gray dotted;
+border-bottom: 1px gray solid;
+padding: 10px 8px;
+}
