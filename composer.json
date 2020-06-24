@@ -1,4 +1,7 @@
 {
+    "name": "echu888/panel",
+    "description":"Finance / HR / scheduling software for non-profit education",
+    "license": "GPL-3.0-or-later",
 	"require": {
 		"google/apiclient": "^2.0"
 	}
