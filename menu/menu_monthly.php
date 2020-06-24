@@ -191,7 +191,7 @@ integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZf
 
 <script>
 function getData(report, id) {
-    var url = "action_get_monthly_report.php";
+    var url = "../action/get_monthly_report.php";
     var year = getUrlParameter( 'year' );
     var month = getUrlParameter( 'month' );
     if ( report != '' )

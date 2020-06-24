@@ -1,7 +1,7 @@
 <?php
 namespace Action {
-require_once 'database.php';
-require_once 'debug.php';
+require_once '../database.php';
+require_once '../utility/debug.php';
 
 function saveGroup( $input )
 {

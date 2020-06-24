@@ -1,6 +1,6 @@
 <?php
 require_once 'menu.php';
-require_once 'debug.php';
+require_once '../utility/debug.php';
 ?>
 
 

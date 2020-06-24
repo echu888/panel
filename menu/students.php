@@ -1,20 +1,20 @@
 <?php require_once 'menu.php'; ?>
 
-<script type="text/javascript" charset="utf-8" src="dist/jquery.modal.min.js" ></script>
-<link rel="stylesheet" type='text/css' href="dist/jquery.modal.min.css" media="screen" />
-<link rel="stylesheet" type='text/css' href="dist/rome.css" media="screen" />
+<script type="text/javascript" charset="utf-8" src="../dist/jquery.modal.min.js" ></script>
+<link rel="stylesheet" type='text/css' href="../dist/jquery.modal.min.css" media="screen" />
+<link rel="stylesheet" type='text/css' href="../dist/rome.css" media="screen" />
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/b-1.2.4/b-print-1.2.4/r-2.1.1/datatables.min.css"/>
 <script       type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/b-1.2.4/b-print-1.2.4/r-2.1.1/datatables.min.js"></script>
 
-<script       type="text/javascript" charset="utf-8" src="dist/rome.js" ></script>
-<script defer type="text/javascript" charset="utf-8" src="utility_note.js" ></script>
-<script async type="text/javascript" charset="utf-8" src="utility_camera.js" ></script>
-<script       type="text/javascript" charset="utf-8" src="utility_datatables.js" ></script>
+<script       type="text/javascript" charset="utf-8" src="../dist/rome.js" ></script>
+<script defer type="text/javascript" charset="utf-8" src="../utility/note.js" ></script>
+<script async type="text/javascript" charset="utf-8" src="../utility/camera.js" ></script>
+<script       type="text/javascript" charset="utf-8" src="../utility/datatables.js" ></script>
 
 
-<link rel='stylesheet' type='text/css' href='group.css' />
-<link rel='stylesheet' type='text/css' href='menu_students.css' />
+<link rel='stylesheet' type='text/css' href='../css/group.css' />
+<link rel='stylesheet' type='text/css' href='../css/menu_students.css' />
 
 
 
@@ -58,7 +58,7 @@
      <h1 id='formTitle'></h1>
 
        <input type="hidden" name='profileImage' id='profileImage'> </input>
-<?php require_once 'utility_camera.php' ?>
+<?php require_once '../utility/camera.php' ?>
        <hr/> 
 
        <div class='formLine'> <label> <? TR( 'firstname'   ); ?> <input name="FirstName"    type="text" placeholder="First name only"  required > </label> </div>
@@ -215,7 +215,7 @@ function dataTableize() {
                 console.log( action + ': success' );
                 if ( redrawTable ) {
                   //getTableInstance().clear().destroy();
-                  populateTable( 'action_get_students.php' );
+                  populateTable( '../action/get_students.php' );
                 }
               },
               error:function(xhr, status, error){
@@ -252,7 +252,7 @@ function dataTableize() {
 
 
         $("form#deletePerson").submit( function() {
-                              performAction( "#deletePerson", "action_delete_person.php" );
+                              performAction( "#deletePerson", "../action/delete_person.php" );
                           });
         
         $("form#addNote").submit( function() {
@@ -264,7 +264,7 @@ function dataTableize() {
                              $( this ).find( "input[name=Reference]"  ).val( details );
 
                              //1. do an Ajax submit, bu don't redraw the table 
-                             performAction( "#addNote",      "action_save_studentnote.php",  false );
+                             performAction( "#addNote",      "../action/save_studentnote.php",  false );
 
                              //2. redisplay the notes
                              student_id   = $( this ).find( "input[name=student_id]"   ).val();
@@ -320,7 +320,7 @@ function dataTableize() {
  
         $("body").on( 'click', '#addEntry', function() {
             Camera.clearProfilePic();
-            setupForm( "<? TR( 'addnewperson' ); ?>", 'action_save_student.php' );
+            setupForm( "<? TR( 'addnewperson' ); ?>", '../action/save_student.php' );
 
             var element = $( 'form#personForm' );
             rome( Birthdate ).options( { time: false } );
@@ -335,7 +335,7 @@ function dataTableize() {
             // step 1 : (if successful) update the DOM 
             // step 1 : (if NOT successful) display error message
             Camera.clearProfilePic();
-            setupForm( "<? TR( 'editperson' ); ?>", 'action_update_student.php' );
+            setupForm( "<? TR( 'editperson' ); ?>", '../action/update_student.php' );
           
             var element = $( 'form#personForm' );
             var rowData = getCurrentRowData( this );
@@ -351,7 +351,7 @@ function dataTableize() {
             //element.find( "input[name=Birthdate]"   ).val( rowData[ 9 ] );
             rome( Birthdate ).options( { time: false, initialValue: rowData[ 9 ] } );
         
-            Camera.displayProfilePic( 'action_get_picture.php?student=' + rowData[ 0 ] );
+            Camera.displayProfilePic( '../action/get_picture.php?student=' + rowData[ 0 ] );
             element.modal();
 
         });
@@ -390,11 +390,11 @@ function dataTableize() {
          // send the request to the server
             $.ajax({
               type: "POST",
-              url:  "action_queue_student.php",
+              url:  "../action/queue_student.php",
               data: { student_id:student_id, action:action },
             })
             .done( function( data ) { 
-                console.log( 'action_queue_student.php : success' );
+                console.log( '../action/queue_student.php : success' );
             })
             .fail( function( jqXHR, textStatus, errorThrown ) { 
             }) 
@@ -419,7 +419,7 @@ function retrieveNotes( student_id, name ) {
 
     $.ajax({
       type: "get",
-      url:  "action_get_studentnotes.php",
+      url:  "../action/get_studentnotes.php",
       cache: false,
       data: { student_id:student_id },
       dataType: "json"
@@ -455,7 +455,7 @@ $('#peopleTable' ).on( 'click', '.studentRow', function() {
 
 //on document ready
 $(function(){
-  populateTable( 'action_get_students.php' );
+  populateTable( '../action/get_students.php' );
 });
 
 

@@ -1,7 +1,7 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
-require_once 'action_save_group_helper.php';
+require_once '../auth/authenticate.php';
+require_once 'save_group_helper.php';
 
 saveGroup( $_POST );
 

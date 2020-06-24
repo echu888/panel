@@ -1,5 +1,5 @@
 <?php
-require_once 'debug.php';
+require_once '../utility/debug.php';
 
 function saveProfilePicture( $file, $imageData ) 
 {

@@ -42,7 +42,7 @@ var RecordNote = {
   {
       $.ajax({
           type: "post",
-          url:  "action_save_studentnote.php",
+          url:  "../action/save_studentnote.php",
           data: { student_id: id, Code: code, Reference: reference }, //$( form ).serialize(), 
           beforeSend:function(){
               //$('#ajax-panel').html('<div class="loading"><img src="images/loading.gif" alt="Loading..." /></div>');
@@ -117,12 +117,12 @@ function Note( json ) {
         case STUDENT_FINISHED:
         case STAFF_STARTED_CLASS:
         case STAFF_FINISHED_CLASS: 
-            reference = '<a href="view_group.php?id=' + this.reference + '" target="_blank"> view class </a>';
+            reference = '<a href="../menu/view_group.php?id=' + this.reference + '" target="_blank"> view class </a>';
             break;
 
         case STUDENT_DONATED:
         case STAFF_COLLECT_DONATION:
-            reference = '<a href="menu_donations.php?id=' + this.reference + '" target="_blank"> view donation </a>';
+            reference = '<a href="../menu/donations.php?id=' + this.reference + '" target="_blank"> view donation </a>';
             break;
 
         default:
@@ -140,7 +140,7 @@ function Note( json ) {
 function displayNotes( titleSelector, contentSelector, type, name, id, data ) {
 
     var title = '<div class="personInfoTitle">' + name + '</div>';
-    title += "<img class='profilePic' src='action_get_picture.php?" + type + "=" + id + "'>";
+    title += "<img class='profilePic' src='../action/get_picture.php?" + type + "=" + id + "'>";
 
     var content = $( '<div class="personInfoContent"></div>' );
     $.each ( data, function( index, line ) {

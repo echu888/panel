@@ -1,13 +1,13 @@
 <?php
-require_once 'authenticate.php';
-require_once 'database.php';
+require_once '../auth/authenticate.php';
+require_once '../database.php';
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="print_donation.css"  />
+  <link rel="stylesheet" type="text/css" href="../css/print_donation.css"  />
 <head/>
 
 <body onload="window.print()">
@@ -94,7 +94,7 @@ require_once 'database.php';
       $form[ 'StartDate' ] = $group[ 'StartDate' ];
       $form[ 'teacher'   ] = $group[ 'staffFirstName' ]; // + ' ' + $group[ 'staffLastName' ];
   
-      include "print_donation_template.php";
+      include "donation_template.php";
     
       // add page break between all pages, except the last page
       if( $index < count( $students ) ) {

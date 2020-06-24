@@ -229,7 +229,7 @@ function getDonations( id ) {
     var element = $( '#rootElement' );
     element.empty();
 
-    var url = "action_get_donations.php";
+    var url = "../action/get_donations.php";
 
     if ( id != '' ) 
       url += "?id=" + id;
@@ -274,7 +274,7 @@ function teacherHandler( id ) {
                 selector: 'a',
                 type: 'text',
                 title: 'Donation Amount:',
-                url: 'action_update_donation.php'
+                url: '../action/update_donation.php'
             });
           }
 
@@ -292,7 +292,7 @@ function getUrlParameter(name) {
 
 function getTeachers() {
   return $.ajax({
-       url: "action_get_teachers.php",
+       url: "../action/get_teachers.php",
        data: { type: "staff" },
        dataType: "json",
   });
@@ -381,7 +381,7 @@ $("#groupedPeopleContainer").on( 'click', '.editEntry', function() {
     var element = $( 'form#groupForm' );
     element.trigger( 'reset' );
 
-    element.attr( 'action', 'action_update_group.php' );
+    element.attr( 'action', '../action/update_group.php' );
     element.find( 'h1#formTitle'                ).html( "<? TR( 'editgroup' ); ?>" );
     element.find( 'button#formSubmitButton', '' ).html( " <? TR( 'editgroup' ); ?> " );;
 
@@ -522,9 +522,9 @@ $("button.cancel").click( function(){
 
 </script>
 
-<script type="text/javascript" charset="utf-8" src="utility_general.js" ></script>
-<script type="text/javascript" charset="utf-8" src="utility_time.js" ></script>
-<script type="text/javascript" charset="utf-8" src="utility_select.js" ></script>
+<script type="text/javascript" charset="utf-8" src="../utility/general.js" ></script>
+<script type="text/javascript" charset="utf-8" src="../utility/time.js" ></script>
+<script type="text/javascript" charset="utf-8" src="../utility/select.js" ></script>
 
 </html>
 

@@ -1,9 +1,9 @@
 <?php
 namespace Action {
 // NOTE: This file is executed as a nightly cronjob, therefore, no authentication is required
-require_once 'database.php';
-require_once 'debug.php';
-require_once 'utility_note.php';
+require_once '../database.php';
+require_once '../utility/debug.php';
+require_once '../utility/note.php';
 
 //MSG( 'called', basename( __FILE__ ) );
 print( "Touching groups..." . PHP_EOL );

@@ -1,7 +1,7 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
-include 'database.php';
+require_once '../auth/authenticate.php';
+include '../database.php';
 
 
 $input = $_POST; 

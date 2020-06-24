@@ -1,5 +1,5 @@
 <?php
-require_once 'authenticate.php';
+require_once '../auth/authenticate.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,13 +7,13 @@ require_once 'authenticate.php';
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="print_attendance.css"  />
+<link rel="stylesheet" type="text/css" href="../css/print_attendance.css"  />
 <head/>
 
 <!--body onload="window.print()"-->
 <body>
 <?php
-require_once 'utility_print.php';
+require_once '../utility/print.php';
 
 $group_id = $_GET[ 'group_id' ];
 $group    = getGroupInfo( $group_id );

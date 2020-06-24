@@ -1,17 +1,17 @@
-<?php require_once 'authenticate.php'; ?>
-<?php require_once 'utility_role.php'; ?>
-<?php require_once 'lang.php'; ?>
+<?php require_once '../auth/authenticate.php'; ?>
+<?php require_once '../utility/role.php'; ?>
+<?php require_once '../utility/lang.php'; ?>
 <!doctype html>
 <html>
 
 <head>
 <title>The Centre Panel</title>
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+<link rel="icon" href="../images/favicon.png" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#e25f00">
-<link rel="stylesheet" type="text/css" href="menu.css">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
 <?php if ( $_SESSION[ 'lang' ] == 'th' ) { ?> <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"> <? } ?>
 <?php if ( $_SESSION[ 'lang' ] == 'en' ) { ?> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> <? } ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,25 +26,25 @@
           <div class='dropdown-item'> <button class='dropdown-button'> <? TR( 'groups' ); ?> </button>
           <div class='dropdown-content'>
 <?php if ( Role\isTeacher() ) { ?>
-                      <a href="menu_group.php?mode=my">  <? TR( 'mygroups'       ); ?> </a>
+                      <a href="menu/group.php?mode=my">  <? TR( 'mygroups'       ); ?> </a>
 <?php } ?>
-                      <a href="menu_group.php">          <? TR( 'groups'         ); ?> </a>
+                      <a href="menu/group.php">          <? TR( 'groups'         ); ?> </a>
           </div>
           </div>
               
           <div class='dropdown-item'> <button class='dropdown-button'> <? TR( 'people' ); ?> </button>
           <div class='dropdown-content'>
-                      <a href="menu_birthdays.php"> <? TR( 'birthdays'      ); ?> </a>
-                      <a href="menu_students.php">  <? TR( 'students'       ); ?> </a>
-                      <a href="menu_staff.php">     <? TR( 'staff'          ); ?> </a>
+                      <a href="menu/birthdays.php"> <? TR( 'birthdays'      ); ?> </a>
+                      <a href="menu/students.php">  <? TR( 'students'       ); ?> </a>
+                      <a href="menu/staff.php">     <? TR( 'staff'          ); ?> </a>
           </div>
           </div>
               
           <div class='dropdown-item'> <button class='dropdown-button'> <? TR( 'reports' ); ?> </button>
           <div class='dropdown-content'>
-                      <a href="menu_donations.php"> <? TR( 'donations'      ); ?> </a>
-                      <a href="menu_monthly.php">   <? TR( 'monthly report' ); ?> </a>    
-                      <a href="menu_annual.php">    <? TR( 'annual report'  ); ?> </a>
+                      <a href="menu/donations.php"> <? TR( 'donations'      ); ?> </a>
+                      <a href="menu/monthly.php">   <? TR( 'monthly report' ); ?> </a>    
+                      <a href="menu/annual.php">    <? TR( 'annual report'  ); ?> </a>
           </div>
           </div>
 

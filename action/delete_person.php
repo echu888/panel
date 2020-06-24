@@ -1,6 +1,6 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
+require_once '../auth/authenticate.php';
 
 //-------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ $idColumn = isset( $input[ 'student_id' ] ) ? "student_id" : "staff_id";
 $idValue  = $input[ $idColumn ];
 
 
-include 'database.php';
+include '../database.php';
 $connection = getConnection();
 $query      = "DELETE FROM `" . $table . "` WHERE " . $idColumn . "=:" . $idColumn;
 $statement  = $connection->prepare( $query );

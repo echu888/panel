@@ -25,7 +25,7 @@ function populateTable( source ) {
   getTableInstance().clear().destroy();
 
   $.ajax({
-      url: source, // "action_get_students.php",
+      url: source, // "action/get_students.php",
       dataType: "json",
       cache: false,
       beforeSend:function(){
@@ -44,7 +44,7 @@ function populateTable( source ) {
           dataTableize();
       },
       error: function(response){
-        console.log( 'action_get_students.php error: ' + response );
+        console.log( 'action/get_students.php error: ' + response );
       }
     });
 }

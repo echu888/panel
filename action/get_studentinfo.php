@@ -3,9 +3,9 @@ namespace Action {
 // This action retrieves:
 //   One student's information and the associated notes 
 
-require_once 'authenticate.php';
-require_once 'debug.php';
-require_once 'database.php';
+require_once '../auth/authenticate.php';
+require_once '../utility/debug.php';
+require_once '../database.php';
 
 
 $student_id = $_GET[ 'student_id' ];

@@ -1,7 +1,7 @@
 <?php require_once 'menu.php'; ?>
 
 <link rel='stylesheet' type='text/css' href='birthdays.css' />
-<script defer type="text/javascript" charset="utf-8" src="utility_select.js" ></script>
+<script defer type="text/javascript" charset="utf-8" src="../utility/select.js" ></script>
 
 
       
@@ -49,7 +49,7 @@ function calculateAge( birthdate )
 function populateTable( tableName, type, month )  {
    $( tableName ).empty();
    $.ajax({
-       url: "action_get_birthdays.php",
+       url: "../action/get_birthdays.php",
        method: "GET",
        data: { mo : month, who : type },
        dataType: "json",

@@ -1,10 +1,10 @@
 <meta name="google-signin-client_id" content="330113539831-caf2itcjuf6gamro05pq27il51srfgr0.apps.googleusercontent.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#e25f00">
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+<link rel="icon" href="../images/favicon.png" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="signin.css">
+<link rel="stylesheet" type="text/css" href="../signin.css">
 
 <?php
 // Login mechanism:
@@ -23,7 +23,7 @@
 
 <div id='mainInfoBox' class="infoBox">
      <h1>The Centre Panel</h1>
-     <img src="images/panel.jpg">
+     <img src="../images/panel.jpg">
 
      <div id='process'>
 
@@ -52,7 +52,7 @@
   {
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
-    xhr.open( 'POST', 'action_login.php');
+    xhr.open( 'POST', '../action/login.php');
     xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function() {

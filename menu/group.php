@@ -22,7 +22,7 @@ $singleTeacherMode = ( $_GET[ 'mode' ] == 'my' && Role\isTeacher() );
 ?>
 
 <link rel='stylesheet' type='text/css' href='group.css' />
-<script defer type="text/javascript" charset="utf-8" src="utility_note.js" ></script>
+<script defer type="text/javascript" charset="utf-8" src="../utility/note.js" ></script>
 
 <?php 
 if ( Role\isGroupAdmin()  ) { 
@@ -450,7 +450,7 @@ if ( Role\isGroupAdmin()  ) {
            
            $("body").on( 'click', '#addGroup', function() {
                var element = $( 'form#groupForm' );
-               setupForm( "<? TR( 'addnewgroup' ); ?>", "<? TR( 'addgroup' ); ?>", 'action_save_group.php' );
+               setupForm( "<? TR( 'addnewgroup' ); ?>", "<? TR( 'addgroup' ); ?>", '../action/save_group.php' );
                rome( StartDate ).options( { time: false } );
 
                element.modal();
@@ -465,7 +465,7 @@ if ( Role\isGroupAdmin()  ) {
                // step 1 : (if successful) update the DOM 
                // step 1 : (if NOT successful) display error message
                
-               setupForm( "<? TR( 'editgroup' ); ?>", "<? TR( 'editgroup' ); ?>", 'action_update_group.php' );
+               setupForm( "<? TR( 'editgroup' ); ?>", "<? TR( 'editgroup' ); ?>", '../action/update_group.php' );
            
                var element = $( 'form#groupForm' );
                var group_id         = $( this ).data( "group_id" );
@@ -702,7 +702,7 @@ if ( Role\isGroupAdmin()  ) {
            
 //           $("form#deleteGroup").submit( function() {
 //                                 event.preventDefault();
-//                                 performAction( "form#deleteGroup", "action_delete_group.php" );
+//                                 performAction( "form#deleteGroup", "../action/delete_group.php" );
 //                             });
            
            $("button[name=printForm]", "#printDialog" ).click( function() {
@@ -721,7 +721,7 @@ if ( Role\isGroupAdmin()  ) {
                                  event.preventDefault();
            
                                  var group_id = $("form#finishGroup input[name=group_id]" ).val();
-                                 performAction( "form#finishGroup", "action_finish_group.php" );
+                                 performAction( "form#finishGroup", "../action/finish_group.php" );
            
            
            ///------ upon submit, create a new group (for continuing students)
@@ -746,7 +746,7 @@ if ( Role\isGroupAdmin()  ) {
 
 
            ///------ render the dialog for creating a new group
-                                 setupForm( "<? TR( 'addcontinuinggroup' ); ?>", "<? TR( 'addgroup' ); ?>", 'action_continuing_group.php' );
+                                 setupForm( "<? TR( 'addcontinuinggroup' ); ?>", "<? TR( 'addgroup' ); ?>", '../action/continuing_group.php' );
            
                                  var previousGroup     = $( "#group_" + group_id );
                                  var staff_id          = previousGroup.data( 'staff_id' );
@@ -771,7 +771,7 @@ if ( Role\isGroupAdmin()  ) {
            
            //$("form#donateGroup").submit( function() {
            //                      event.preventDefault();
-           //                      //performAction( "form#donateGroup", "action_finish_group.php" );
+           //                      //performAction( "form#donateGroup", "../action/finish_group.php" );
            //                  });
            
            
@@ -1082,14 +1082,14 @@ function performAction( form, action ) {
 
 function getGroupedPeople() {
   return $.ajax({
-      url: "action_get_grouped.php",
+      url: "../action/get_grouped.php",
       dataType: "json",
   });
 }
 
 function getUngroupedPeople() {
   return $.ajax({
-      url: "action_get_ungrouped.php",
+      url: "../action/get_ungrouped.php",
       dataType: "json",
       success:function(data){
           $('#ungroupedPeople').empty();
@@ -1107,7 +1107,7 @@ function getUngroupedPeople() {
 
 function getTeachers() {
   return $.ajax({
-      url: "action_get_teachers.php",
+      url: "../action/get_teachers.php",
       data: { type: "staff" },
       dataType: "json",
   });
@@ -1116,7 +1116,7 @@ function getTeachers() {
 function getStudentInfo( student_id ) {
   $.ajax({
       type: "get",
-      url: "action_get_studentnotes.php",
+      url: "../action/get_studentnotes.php",
       data: { student_id: student_id },
       dataType: "json",
       beforeSend: function() 
@@ -1141,7 +1141,7 @@ function getStudentInfo( student_id ) {
 ?>
         function addStudentToGroup( student, group ) {
           return $.ajax({
-              url: "action_student_group.php",
+              url: "../action/student_group.php",
               type: "post",
               dataType: "json",
               data: { type: "add", 
@@ -1153,7 +1153,7 @@ function getStudentInfo( student_id ) {
         
         function removeStudentFromGroup( student, group ) {
           return $.ajax({
-              url: "action_student_group.php",
+              url: "../action/student_group.php",
               type: "post",
               dataType: "json",
               data: { type: "remove", 
@@ -1165,7 +1165,7 @@ function getStudentInfo( student_id ) {
         
         function moveStudentToGroup( student, old_group, new_group ) {
           return $.ajax({
-              url: "action_student_group.php",
+              url: "../action/student_group.php",
               type: "post",
               dataType: "json",
               data: { type: "move", 
@@ -1178,7 +1178,7 @@ function getStudentInfo( student_id ) {
         
         function deleteGroup() {
           return $.ajax({
-              url: "action_delete_group.php",
+              url: "../action/delete_group.php",
               type: "post",
               dataType: "json",
               data: { group_id: group_id  },
@@ -1245,14 +1245,14 @@ function getGroups() {
 
 
     $.ajax({
-        url: "action_get_groups.php",
+        url: "../action/get_groups.php",
         dataType: "json",
 <?php if ( $singleTeacherMode ) { ?>
         data: { staff_id: "<?php SignIn\getAuthorizedStaffId() ?>" },
 <?php } ?>
     })
     .done( function(data){
-        console.log( "action_get_groups.php done" );
+        console.log( "action/get_groups.php done" );
         var newGroups = [];
         var arrangedGroups = [];
         var numberOfArrangedGroups = 0;
@@ -1320,7 +1320,7 @@ function getGroups() {
         $( '#numberOfNewGroupsStudents' ).html( studentCounter.get() );
     })
     .fail( function(data) {
-        console.log( "action_get_groups.php failed!" );
+        console.log( "action/get_groups.php failed!" );
     });
 
   });
@@ -1477,8 +1477,8 @@ $(function(){  //on document ready
 <script src="dist/weekLine/scripts/jquery.weekLine.min.js"></script>
 <?php } ?>
 
-<script async type="text/javascript" charset="utf-8" src="utility_time.js" ></script>
-<script       type="text/javascript" charset="utf-8" src="utility_curriculum.js" ></script>
+<script async type="text/javascript" charset="utf-8" src="../utility/time.js" ></script>
+<script       type="text/javascript" charset="utf-8" src="../utility/curriculum.js" ></script>
 </html>
 
 

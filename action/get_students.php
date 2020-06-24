@@ -1,8 +1,8 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
-require_once 'debug.php';
-require_once 'database.php';
+require_once '../auth/authenticate.php';
+require_once '../utility/debug.php';
+require_once '../database.php';
 
 
 $queryString = "SELECT * FROM Students ORDER BY student_id DESC";

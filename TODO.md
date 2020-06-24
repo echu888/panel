@@ -1,5 +1,4 @@
-Sign-in required: Currently uses Google sign-in via “thecentrethailand.org”
-No longer “delete” Centre email accounts; just decommission
+
 STAFF SECTION
 Pictures? Eric hopes to incorporate this into the system
 Will “short-termers” be considered staff
@@ -24,5 +23,4 @@ Attendance sheet - rotate “Progress Notes” to be horizontal
 Is there a way to know if they paid or not? Yes, this is coming
 Eric does not believe he will import Data from current system.
 Reports are blank, but are coming in the future
-
 

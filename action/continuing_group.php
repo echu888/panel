@@ -1,8 +1,8 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
-require_once 'action_save_group_helper.php';
-require_once 'action_student_group_helper.php';
+require_once '../auth/authenticate.php';
+require_once 'save_group_helper.php';
+require_once 'student_group_helper.php';
 
 $input = $_POST;
 //    [staff_id] => 17 [Room] => None

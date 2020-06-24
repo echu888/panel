@@ -13,9 +13,9 @@ session_start();
 //   4. the credentials are saved into a session variable so that they don't have to reverified constantly
 
 
-require_once 'vendor/autoload.php'; //< for Google API 
-require_once 'debug.php';
-require_once 'database.php';
+require_once '../vendor/autoload.php'; //< for Google API 
+require_once '../utility/debug.php';
+require_once '../database.php';
 
 
 class GoogleSignin 

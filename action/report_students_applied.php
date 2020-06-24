@@ -1,8 +1,8 @@
 <?php
 namespace Action {
-require_once 'authenticate.php';
-require_once 'database.php';
-require_once 'utility_note.php';
+require_once '../auth/authenticate.php';
+require_once '../database.php';
+require_once '../utility/note.php';
 
 $month = array_key_exists( 'da', $_GET ) 
          ? $_GET[ 'da' ]

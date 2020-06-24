@@ -9,7 +9,7 @@ session_start();
 // TODO on action pages, directly print results.  
 // TODO for all other pages, we can use console.log?
 
-//require_once 'debug.php';
+//require_once '../utility/debug.php';
 //print( "authenticate.php: session variable contains [ ");
 //print_r( $_SESSION );
 //print( "]<br/>");
@@ -24,7 +24,7 @@ $verified = isset( $_SESSION[ 'verified' ] )
 //MSG( 'authenticate.php: verified is ' . ( $verified ? 'true' : 'false' ) . "\n" );
 
 if ( $verified == false ) {
-  header( 'Location: signin.php' );
+  header( 'Location: auth/signin.php' );
   exit( 0 );
 } 
 
